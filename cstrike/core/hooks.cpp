@@ -123,7 +123,7 @@ bool H::Setup()
 	//*(float*)(pSetup + 0x494) = -v21; // m_OrthoLeft
 	//*(float*)(pSetup + 0x498) = -v22; // m_OrthoTop
 	//*(float*)(pSetup + 0x4A0) = v22; // m_OrthoBottom
-	if (!hkOverrideView.Create(MEM::FindPattern(CLIENT_DLL, CS_XOR("48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 83 EC ? 48 8B FA E8 20 1E ED FF")), reinterpret_cast<void*>(&OverrideView)))
+	if (!hkOverrideView.Create(MEM::FindPattern(CLIENT_DLL, CS_XOR("48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 83 EC ? 48 8B FA E8")), reinterpret_cast<void*>(&OverrideView)))
 		return false;
 
 	//L_PRINT(LOG_INFO) << CS_XOR("\"OverrideView\" hook has been created");
