@@ -14,7 +14,7 @@ void CKeyValues3::LoadFromBuffer(const char* szString)
 bool CKeyValues3::LoadKV3(CUtlBuffer* buffer)
 {
 	using fnLoadKeyValues = bool(CS_FASTCALL*)(CKeyValues3*, void*, CUtlBuffer*, KV3ID_t*, void*, void*, void*, void*, const char*);
-	static const fnLoadKeyValues oLoadKeyValues = reinterpret_cast<fnLoadKeyValues>(MEM::GetAbsoluteAddress(MEM::FindPattern(TIER0_DLL, CS_XOR("E8 ? ? ? ? EB 36 8B 43 10")), 0x1, 0x0));
+	static const fnLoadKeyValues oLoadKeyValues = reinterpret_cast<fnLoadKeyValues>(MEM::GetAbsoluteAddress(MEM::FindPattern(TIER0_DLL, CS_XOR("E8 ? ? ? ? EB 36 8B 43 10")), 0x1, 0x0)); // fnSetTypeKV3
 
 	#ifdef CS_PARANOID
 	CS_ASSERT(oLoadKeyValues != nullptr);
